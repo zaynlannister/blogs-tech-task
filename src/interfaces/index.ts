@@ -4,3 +4,7 @@ export interface Post {
   title: string
   body: string
 }
+
+export interface Sorting {
+  [key: string]: any
+}
