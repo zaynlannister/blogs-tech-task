@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <AppHeader>Blogs Feed</AppHeader>
+    <AppHeader />
     <router-view></router-view>
   </div>
 </template>
