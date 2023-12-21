@@ -1,9 +1,12 @@
 <template>
   <div class="container">
-    <p>hello world</p>
+    <HeaderSection>Blogs Feed</HeaderSection>
+    <router-view></router-view>
   </div>
 </template>
 
-<script setup></script>
+<script setup lang="ts">
+import HeaderSection from './components/HeaderSection.vue'
+</script>
 
 <style lang="scss" scoped></style>
