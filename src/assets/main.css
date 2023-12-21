@@ -7,10 +7,15 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
   padding: 0;
+  color: #1c1c1c;
 }
 
 .container {
   width: min(1120px, 100%);
   margin: 0 auto;
   padding: 0 20px;
+}
+
+p {
+  margin: 0;
 }

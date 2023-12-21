@@ -14,10 +14,6 @@
   padding: 15px 0;
   margin-bottom: 25px;
 
-  p {
-    margin: 0;
-  }
-
   &__text {
     font-size: 20px;
   }
