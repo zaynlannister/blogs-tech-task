@@ -1,17 +1,19 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeViewVue from '@/views/HomeView.vue'
-import PostViewVue from '@/views/PostView.vue'
+import HomeView from '@/views/HomeView.vue'
+import PostView from '@/views/PostView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
+      name: 'home',
       path: '/',
-      component: HomeViewVue
+      component: HomeView
     },
     {
+      name: 'post',
       path: '/post/:id',
-      component: PostViewVue
+      component: PostView
     }
   ]
 })

@@ -2,17 +2,20 @@
   <div class="post">
     <p class="post__title">{{ post.title }}</p>
     <p class="post__body">{{ post.body }}</p>
+    <button class="post__button" @click="$emit('onView')">View</button>
   </div>
 </template>
 
 <script setup lang="ts">
 import type { Post } from '@/interfaces'
 
-const props = defineProps<{
+defineProps<{
   post: Post
 }>()
 
-const { post } = props
+defineEmits<{
+  onView: []
+}>()
 </script>
 
 <style scoped lang="scss">
@@ -29,6 +32,10 @@ const { post } = props
 
   &__body {
     color: #404040;
+  }
+
+  &__button {
+    margin-top: 10px;
   }
 }
 </style>

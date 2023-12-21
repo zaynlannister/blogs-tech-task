@@ -1,37 +1,27 @@
 <template>
-  <p v-if="isLoading">Loading...</p>
+  <p v-if="isFetching">Loading...</p>
   <div v-else>
-    <SinglePost v-for="item in data" :key="item.id" :post="item" />
+    <SinglePost v-for="item in data" :key="item.id" :post="item" @on-view="openPost(item)" />
   </div>
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
+import { $api } from '@/api'
 import SinglePost from '@/components/SinglePost.vue'
 import type { Post } from '@/interfaces'
+import { useRouter } from 'vue-router'
 
-const data = ref<Post[]>([])
-const isLoading = ref(true)
+const router = useRouter()
+const { isFetching, data } = $api('/posts').get().json<Post[]>()
 
-const fetchData = async () => {
-  try {
-    const response = await fetch('https://jsonplaceholder.typicode.com/posts')
-    if (response.ok) {
-      const result = await response.json()
-      data.value = result
-      isLoading.value = false
-    } else {
-      throw new Error('Error in data loading!')
+function openPost(post: Post) {
+  router.push({
+    name: 'post',
+    params: {
+      id: post.id
     }
-  } catch (error) {
-    console.log(error)
-    isLoading.value = false
-  }
+  })
 }
-
-onMounted(() => {
-  fetchData()
-})
 </script>
 
 <style scoped></style>
