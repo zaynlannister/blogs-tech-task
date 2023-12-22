@@ -7,7 +7,8 @@
       <SinglePost v-for="post in posts" :key="post.id" :post="post" @on-view="openPost(post)" />
     </div>
     <div class="load-content">
-      <button @click="loadMore">{{ loadMoreLabel }}</button>
+      <button v-if="!isFetching" @click="loadMore">{{ loadMoreLabel }}</button>
+      <AppLoader v-else class="app-loader" />
     </div>
   </div>
 </template>
@@ -18,6 +19,7 @@ import SinglePost from '@/components/SinglePost.vue'
 import type { Post, Sorting } from '@/interfaces'
 import { computed, ref, watch } from 'vue'
 import { useRouter } from 'vue-router'
+import AppLoader from '@/components/AppLoader.vue'
 
 const router = useRouter()
 const page = ref<number>(1)
@@ -85,7 +87,7 @@ watch(sorting, () => {
 
 <style scoped lang="scss">
 .load-content {
-  padding: 10px 0 40px 0;
+  padding: 10px 0 30px 0;
 }
 
 .sort-content {

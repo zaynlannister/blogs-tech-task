@@ -9,7 +9,9 @@
         <span class="post__body">Description:</span> {{ data?.body }}
       </p>
     </div>
-    <div v-else>Loading...</div>
+    <div v-else>
+      <AppLoader />
+    </div>
   </div>
 </template>
 
@@ -18,6 +20,7 @@ import { $api } from '@/api'
 import type { Post } from '@/interfaces'
 import { useRoute, useRouter } from 'vue-router'
 import ArrowIcon from '@/icons/ArrowIcon.vue'
+import AppLoader from '@/components/AppLoader.vue'
 
 const route = useRoute()
 const router = useRouter()
