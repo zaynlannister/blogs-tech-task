@@ -21,6 +21,7 @@ import PostSearchForm from './PostSearchForm.vue'
   margin-bottom: 25px;
 
   &__text {
+    font-weight: 600;
     font-size: 20px;
   }
 }
