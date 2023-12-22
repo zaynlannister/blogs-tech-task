@@ -90,4 +90,28 @@ function openPost(post: Post) {
     padding: 10px;
   }
 }
+
+@media (max-width: 641px) {
+  .search {
+    &__results {
+      width: 400px;
+    }
+  }
+}
+
+@media (max-width: 441px) {
+  .search {
+    &__results {
+      width: 300px;
+    }
+  }
+}
+
+@media (max-width: 341px) {
+  .search {
+    &__results {
+      width: 250px;
+    }
+  }
+}
 </style>
