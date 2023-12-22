@@ -1,13 +1,13 @@
 <template>
   <div>
     <div class="sort-content">
-      <button @click="sortByTitle">{{ sortLabel }}</button>
+      <button @click="sortByTitle" class="button">{{ sortLabel }}</button>
     </div>
     <div>
       <SinglePost v-for="post in posts" :key="post.id" :post="post" @on-view="openPost(post)" />
     </div>
     <div class="load-content">
-      <button v-if="!isFetching" @click="loadMore">{{ loadMoreLabel }}</button>
+      <button v-if="!isFetching" @click="loadMore" class="button">{{ loadMoreLabel }}</button>
       <AppLoader v-else class="app-loader" />
     </div>
   </div>
