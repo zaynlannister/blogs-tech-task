@@ -93,7 +93,8 @@ function openPost(post: Post) {
 
 @media (max-width: 641px) {
   .search {
-    &__results {
+    &__results,
+    &__loading {
       width: 400px;
     }
   }
@@ -101,7 +102,8 @@ function openPost(post: Post) {
 
 @media (max-width: 441px) {
   .search {
-    &__results {
+    &__results,
+    &__loading {
       width: 300px;
     }
   }
@@ -109,7 +111,8 @@ function openPost(post: Post) {
 
 @media (max-width: 341px) {
   .search {
-    &__results {
+    &__results,
+    &__loading {
       width: 250px;
     }
   }
