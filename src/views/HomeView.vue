@@ -74,8 +74,14 @@ function loadMore() {
 }
 
 function sortByTitle() {
-  sorting.value = {
-    _sort: 'title'
+  if (sorting.value._sort) {
+    delete sorting.value._sort
+    posts.value = []
+    execute()
+  } else {
+    sorting.value = {
+      _sort: 'title'
+    }
   }
 }
 
