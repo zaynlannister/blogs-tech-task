@@ -3,6 +3,7 @@
     <p class="post__title">{{ post.title }}</p>
     <p class="post__body">{{ post.body }}</p>
     <div class="post__icon">
+      <CommentIcon @click="$emit('onComment')" />
       <EyeIcon @click="$emit('onView')" />
     </div>
   </div>
@@ -11,6 +12,7 @@
 <script setup lang="ts">
 import type { Post } from '@/interfaces'
 import EyeIcon from '@/icons/EyeIcon.vue'
+import CommentIcon from '@/icons/CommentIcon.vue'
 
 defineProps<{
   post: Post
@@ -18,6 +20,7 @@ defineProps<{
 
 defineEmits<{
   onView: []
+  onComment: []
 }>()
 </script>
 
@@ -41,6 +44,8 @@ defineEmits<{
     margin-top: 10px;
     display: flex;
     justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
   }
 }
 </style>
