@@ -1,6 +1,12 @@
 <template>
   <div class="search">
-    <input v-model="searchQuery" class="search__input" type="text" placeholder="Search..." />
+    <input
+      id="post-search"
+      v-model="searchQuery"
+      class="search__input"
+      type="text"
+      placeholder="Search..."
+    />
     <div v-if="data && data.length > 0" class="search__results">
       <div v-for="post in data" :key="post.id" class="search__result" @click="openPost(post)">
         {{ post.title }}
